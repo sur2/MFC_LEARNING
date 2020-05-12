@@ -1,0 +1,2 @@
+C:\Users\Owner\Desktop\coding\MFC_LEARNING\ExamODBC\Debug\ExamODBC.exe
+C:\Users\Owner\Desktop\coding\MFC_LEARNING\ExamODBC\Debug\ExamODBC.pdb
