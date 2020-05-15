@@ -1,0 +1,2 @@
+C:\Users\Owner\Desktop\coding\MFC_LEARNING\ValueClient\Debug\ValueClient.exe
+C:\Users\Owner\Desktop\coding\MFC_LEARNING\ValueClient\Debug\ValueClient.pdb
