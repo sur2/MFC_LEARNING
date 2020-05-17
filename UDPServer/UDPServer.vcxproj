@@ -190,6 +190,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="UDPServer.h" />
     <ClInclude Include="UDPServerDlg.h" />
+    <ClInclude Include="UnitSocket.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -201,6 +202,7 @@
     <ClCompile Include="ServerSocket.cpp" />
     <ClCompile Include="UDPServer.cpp" />
     <ClCompile Include="UDPServerDlg.cpp" />
+    <ClCompile Include="UnitSocket.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="UDPServer.rc" />

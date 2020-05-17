@@ -14,9 +14,6 @@
 
 
 // CUDPServerDlg 대화 상자
-
-
-
 CUDPServerDlg::CUDPServerDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_UDPSERVER_DIALOG, pParent)
 {
@@ -31,6 +28,7 @@ void CUDPServerDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CUDPServerDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_SEND_BTN, &CUDPServerDlg::OnBnClickedSendBtn)
 END_MESSAGE_MAP()
 
 
@@ -47,6 +45,7 @@ BOOL CUDPServerDlg::OnInitDialog()
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
 	my_server.Create(33333);
+	my_server.Listen();
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
@@ -87,3 +86,13 @@ HCURSOR CUDPServerDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CUDPServerDlg::OnBnClickedSendBtn()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	
+	int temp;
+	temp = GetDlgItemInt(IDC_VALUE_EDIT);
+	unit.SendNumber(temp);
+}

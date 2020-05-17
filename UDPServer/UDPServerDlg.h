@@ -4,12 +4,14 @@
 
 #pragma once
 #include "ServerSocket.h"
+#include "UnitSocket.h"
 
 // CUDPServerDlg 대화 상자
 class CUDPServerDlg : public CDialogEx
 {
 private:
 	ServerSocket my_server;
+	UnitSocket unit;
 // 생성입니다.
 public:
 	CUDPServerDlg(CWnd* pParent = nullptr);	// 표준 생성자입니다.
@@ -32,4 +34,6 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnBnClickedSendBtn();
 };

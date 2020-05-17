@@ -31,6 +31,7 @@ void CUDPClientDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CUDPClientDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_SEND_BTN, &CUDPClientDlg::OnBnClickedSendBtn)
 END_MESSAGE_MAP()
 
 
@@ -46,6 +47,9 @@ BOOL CUDPClientDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
+	clientSocket.Create();
+	clientSocket.Connect(L"127.0.0.1", 33333);
+
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
@@ -86,3 +90,10 @@ HCURSOR CUDPClientDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+void CUDPClientDlg::OnBnClickedSendBtn()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	int value = GetDlgItemInt(IDC_SEND_EDIT);
+	clientSocket.Send(&value, sizeof(int));
+}
